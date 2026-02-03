@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1b1036, #5a1e8a);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* TOP BAR */
+.topbar {
+  background: linear-gradient(90deg, #8a4f08, #d99a2b);
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #f5c14b;
+}
+
+.logo span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.top-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  background: rgba(0,0,0,0.3);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.badge strong {
+  display: block;
+  font-size: 16px;
+}
+
+.badge.purple {
+  background: rgba(128, 0, 255, 0.3);
+}
+
+.close-btn {
+  background: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #f5c14b;
+  margin-bottom: 10px;
+}
+
+/* GAMES */
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.card small {
+  opacity: 0.85;
+}
+
+/* COLORS */
+.blue {
+  background: linear-gradient(135deg, #0e5cad, #0b2c63);
+}
+
+.red {
+  background: linear-gradient(135deg, #8a1d35, #4b0f1d);
+}
+
+.dark {
+  background: linear-gradient(135deg, #2a2545, #1b1633);
+}
+
+.disabled {
+  opacity: 0.7;
+}
+
+/* PILLS */
+.pill {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: rgba(255,255,255,0.15);
+}
+
+.pill.green {
+  background: #2ecc71;
+  color: #000;
+}
