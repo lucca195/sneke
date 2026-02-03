@@ -5,6 +5,7 @@
   <title>Royal Casino</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -38,13 +39,15 @@
   <!-- GAMES -->
   <section class="games">
 
-    <div class="card blue" id="snake">
+    <!-- SNAKE -->
+    <div class="card blue" id="snakeCard">
       <div class="icon">🎮</div>
       <h2>Jogo da Cobrinha</h2>
       <p>Clássico arcade! Coma e cresça sem bater</p>
       <span class="pill green">Grátis!</span>
     </div>
 
+    <!-- SLOTS -->
     <div class="card red" id="slots">
       <div class="icon">🍒</div>
       <h2>Caça-Níqueis</h2>
@@ -52,24 +55,75 @@
       <small>Aposta mínima: <strong>10 créditos</strong></small>
     </div>
 
+    <!-- BLOQUEADOS -->
     <div class="card dark disabled">
       <div class="icon">♠️</div>
       <h2>Blackjack</h2>
-      <p>Desafie o dealer e chegue a 21!</p>
-      <small>Aposta mínima: <strong>25 créditos</strong></small>
       <span class="pill">Em breve</span>
     </div>
 
     <div class="card dark disabled">
       <div class="icon">💲</div>
       <h2>Roleta</h2>
-      <p>Faça suas apostas! Vermelho ou preto?</p>
-      <small>Aposta mínima: <strong>5 créditos</strong></small>
       <span class="pill">Em breve</span>
     </div>
 
   </section>
 
-  <script src="script.js"></script>
+  <!-- MODAL DO SNAKE -->
+  <div id="snakeModal" style="
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+  ">
+    <div style="
+      width:90%;
+      max-width:1300px;
+      height:90%;
+      background:#000;
+      border-radius:12px;
+      position:relative;
+    ">
+      <button id="closeSnake" style="
+        position:absolute;
+        top:12px;
+        right:12px;
+        background:#ff4d4d;
+        border:none;
+        padding:8px 14px;
+        border-radius:6px;
+        color:#fff;
+        cursor:pointer;
+        z-index:10;
+      ">Fechar</button>
+
+      <iframe
+        src="snake.html"
+        style="width:100%;height:100%;border:none;border-radius:12px;"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- SCRIPT PRINCIPAL -->
+  <script>
+    (() => {
+      const snakeCard = document.getElementById("snakeCard");
+      const snakeModal = document.getElementById("snakeModal");
+      const closeSnake = document.getElementById("closeSnake");
+
+      snakeCard.addEventListener("click", () => {
+        snakeModal.style.display = "flex";
+      });
+
+      closeSnake.addEventListener("click", () => {
+        snakeModal.style.display = "none";
+      });
+    })();
+  </script>
+
 </body>
 </html>
