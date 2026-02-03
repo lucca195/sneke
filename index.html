@@ -30,10 +30,7 @@
   <!-- HERO -->
   <section class="hero">
     <h1>Bem-vindo ao Royal Casino</h1>
-    <p>
-      Escolha seu jogo favorito e divirta-se!
-      Ganhe créditos e suba de nível
-    </p>
+    <p>Escolha seu jogo favorito e divirta-se!</p>
   </section>
 
   <!-- GAMES -->
@@ -47,25 +44,11 @@
       <span class="pill green">Grátis!</span>
     </div>
 
-    <!-- SLOTS -->
-    <div class="card red" id="slots">
+    <!-- OUTROS -->
+    <div class="card red">
       <div class="icon">🍒</div>
       <h2>Caça-Níqueis</h2>
-      <p>Gire e ganhe! Jackpots enormes esperando por você</p>
-      <small>Aposta mínima: <strong>10 créditos</strong></small>
-    </div>
-
-    <!-- BLOQUEADOS -->
-    <div class="card dark disabled">
-      <div class="icon">♠️</div>
-      <h2>Blackjack</h2>
-      <span class="pill">Em breve</span>
-    </div>
-
-    <div class="card dark disabled">
-      <div class="icon">💲</div>
-      <h2>Roleta</h2>
-      <span class="pill">Em breve</span>
+      <p>Em breve</p>
     </div>
 
   </section>
@@ -88,6 +71,7 @@
       border-radius:12px;
       position:relative;
     ">
+
       <button id="closeSnake" style="
         position:absolute;
         top:12px;
@@ -101,27 +85,35 @@
         z-index:10;
       ">Fechar</button>
 
+      <!-- IFRAME SEM SRC INICIAL -->
       <iframe
-        src="snake.html"
+        id="snakeFrame"
         style="width:100%;height:100%;border:none;border-radius:12px;"
       ></iframe>
+
     </div>
   </div>
 
   <!-- SCRIPT PRINCIPAL -->
   <script>
     (() => {
-      const snakeCard = document.getElementById("snakeCard");
+      const snakeCard  = document.getElementById("snakeCard");
       const snakeModal = document.getElementById("snakeModal");
       const closeSnake = document.getElementById("closeSnake");
+      const snakeFrame = document.getElementById("snakeFrame");
 
+      // ABRIR JOGO (CARREGA OS SCRIPTS)
       snakeCard.addEventListener("click", () => {
         snakeModal.style.display = "flex";
+        snakeFrame.src = "snake.html"; // inicia o jogo aqui
       });
 
+      // FECHAR JOGO (DESTROI OS SCRIPTS)
       closeSnake.addEventListener("click", () => {
         snakeModal.style.display = "none";
+        snakeFrame.src = ""; // limpa o iframe (reset total)
       });
+
     })();
   </script>
 
